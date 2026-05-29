@@ -13,9 +13,6 @@ import os
 import time
 from typing import Any, Callable
 
-from dotenv import load_dotenv
-load_dotenv(override=True)
-
 # ---------------------------------------------------------------------------
 # Estimated costs per 1M INPUT & OUTPUT tokens (USD) as of March 2026
 # Vietnamese text generally consumes ~1.5x - 2.0x more tokens than English due to Unicode/diacritics.

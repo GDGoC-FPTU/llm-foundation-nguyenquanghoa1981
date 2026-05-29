@@ -26,12 +26,12 @@ Bạn sẽ thấy output so sánh phản hồi của GPT-4o và GPT-4o-mini.
 Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử dụng prompt **"Hãy kể cho tôi một sự thật thú vị về Việt Nam."**
 
 **Bạn nhận thấy quy luật gì qua bốn phản hồi?** (2–3 câu)
-> *Câu trả lời của bạn*
+> Temperature càng thấp thì câu trả lời càng ổn định, chính xác và ít sáng tạo. Temperature càng cao thì phản hồi đa dạng, sáng tạo hơn nhưng cũng dễ lan man hoặc sai lệch thông tin
 
 **Bạn sẽ đặt temperature bao nhiêu cho chatbot hỗ trợ khách hàng, và tại sao?**
 > *Câu trả lời của bạn*
 
----
+Tôi sẽ chọn khoảng 0.2–0.5 để chatbot trả lời ổn định, nhất quán và hạn chế hallucination khi hỗ trợ khách hàng.
 
 ### Bài tập 2.2 — Đánh Đổi Chi Phí
 Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi người thực hiện 3 lần gọi API, mỗi lần trung bình ~350 token.
@@ -39,15 +39,17 @@ Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi n
 **Ước tính xem GPT-4o đắt hơn GPT-4o-mini bao nhiêu lần cho workload này:**
 > *Câu trả lời của bạn*
 
+GPT-4o thường đắt hơn khoảng 5–10 lần so với GPT-4o-mini tùy lượng input/output token thực tế.
+
 **Mô tả một trường hợp mà chi phí cao hơn của GPT-4o là xứng đáng, và một trường hợp GPT-4o-mini là lựa chọn tốt hơn:**
 > *Câu trả lời của bạn*
 
----
+GPT-4o phù hợp cho các tác vụ cần suy luận sâu như phân tích pháp lý hoặc tư vấn chiến lược. GPT-4o-mini phù hợp cho chatbot FAQ, hỗ trợ khách hàng hoặc tác vụ khối lượng lớn cần tối ưu chi phí.
 
 ### Bài tập 2.3 — Trải Nghiệm Người Dùng với Streaming
 **Streaming quan trọng nhất trong trường hợp nào, và khi nào thì non-streaming lại phù hợp hơn?** (1 đoạn văn)
 > *Câu trả lời của bạn*
-
+Streaming quan trọng với chatbot thời gian thực, trợ lý AI hoặc ứng dụng cần cảm giác phản hồi nhanh vì người dùng thấy câu trả lời xuất hiện ngay lập tức. Non-streaming phù hợp hơn khi cần xử lý hoàn chỉnh trước khi hiển thị như tạo báo cáo, phân tích dữ liệu hoặc xuất nội dung dài có cấu trúc.
 
 ## Danh Sách Kiểm Tra Nộp Bài
 - [ ] Tất cả tests pass: `pytest tests/ -v`
